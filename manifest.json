@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Verbly - Voice-first Google Forms",
+  "version": "1.0.0",
+  "description": "Verbly turns Google Forms into a spoken conversation. Built for blind, low-vision and low-digital-literacy users.",
+  "minimum_chrome_version": "116",
+  "permissions": ["sidePanel", "storage", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://docs.google.com/forms/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "action": { "default_title": "Verbly: open the voice assistant (Alt+Shift+V)" },
+  "content_scripts": [
+    {
+      "matches": ["https://docs.google.com/forms/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Alt+Shift+V" },
+      "description": "Open Verbly"
+    }
+  }
+}
