@@ -1,0 +1,28 @@
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;font:18px/1.4 system-ui,sans-serif;background:#0b0b0b;color:#fff}
+main{padding:16px}
+h1{margin:0 0 8px;font-size:26px}
+h2{font-size:18px;margin:20px 0 6px}
+button,select,input{font:inherit;color:#000;border-radius:12px;border:2px solid #8ab4f8;padding:12px;background:#fff;max-width:100%}
+button{cursor:pointer;background:#8ab4f8;font-weight:700}
+button.big{width:100%;font-size:24px;padding:22px}
+button.secondary{background:#f28b82;border-color:#f28b82}
+.row{display:flex;gap:8px;margin:8px 0}
+.row input{flex:1}
+label{display:block;margin:14px 0 4px;font-weight:600}
+label.inline{display:flex;gap:8px;align-items:center}
+input[type=checkbox]{width:22px;height:22px}
+select,input:not([type=checkbox]){width:100%}
+:focus-visible{outline:4px solid #fdd663;outline-offset:2px}
+#status{font-size:20px;min-height:2.4em;margin:6px 0}
+.mic{font-weight:700;margin:4px 0}
+.mic.on{color:#81c995}
+#log{list-style:none;margin:0;padding:0;max-height:40vh;overflow:auto}
+#log li{padding:6px 8px;margin:4px 0;border-radius:8px;background:#1c1c1c}
+#log li.you{background:#12324a}
+summary{cursor:pointer;margin:12px 0;font-weight:700}
+.badge{font-weight:700;margin:4px 0;padding:6px 10px;border-radius:8px;background:#1c1c1c}
+.badge.ok,#geminiStatus.ok{color:#81c995}
+.badge.bad,#geminiStatus.bad{color:#f28b82}
+#gemTest{margin-top:8px;width:100%}

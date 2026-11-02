@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verbly</title>
+<link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+<main>
+  <h1>Verbly</h1>
+  <p id="status" role="status" aria-live="polite">Open a Google Form, then press Start.</p>
+  <div class="row">
+    <button id="start" class="big">Start voice filling</button>
+    <button id="stop" class="big secondary" hidden>Stop</button>
+  </div>
+  <p id="mic" class="mic" aria-hidden="true">Microphone: off</p>
+  <p id="geminiBadge" class="badge" role="status">Gemini: checking...</p>
+
+  <form id="typed">
+    <label for="typedText">Or type your answer</label>
+    <div class="row">
+      <input id="typedText" autocomplete="off">
+      <button type="submit">Send</button>
+    </div>
+  </form>
+
+  <details>
+    <summary>Settings</summary>
+    <label for="apiKey">Gemini API key (optional, from aistudio.google.com/apikey)</label>
+    <input id="apiKey" type="password" autocomplete="off">
+    <button id="gemTest" type="button">Test Gemini connection</button>
+    <p id="geminiStatus" role="status" aria-live="polite">Not tested yet.</p>
+    <label for="model">Gemini model (found automatically from your key)</label>
+    <select id="model"><option value="">Test the connection to load models</option></select>
+    <label for="voice">Speaker voice</label>
+    <select id="voice"><option value="">Default voice</option></select>
+    <button id="voiceTest" type="button">Hear this voice</button>
+    <label for="rate">Speech speed: <span id="rateVal">1.0</span></label>
+    <input id="rate" type="range" min="0.7" max="2" step="0.1" value="1">
+    <label class="inline"><input id="muted" type="checkbox"> I use a screen reader: show text, do not speak</label>
+    <button id="micTest" type="button">Fix / test microphone</button>
+  </details>
+
+  <h2>Conversation</h2>
+  <ol id="log" aria-live="off"></ol>
+</main>
+<script src="sidepanel.js"></script>
+</body>
+</html>
